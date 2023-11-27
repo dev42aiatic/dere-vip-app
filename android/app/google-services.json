@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376554326936",
+    "project_id": "dere-vip-app",
+    "storage_bucket": "dere-vip-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376554326936:android:c55c7e3170f388e145b9ed",
+        "android_client_info": {
+          "package_name": "com.quesoftco.dere_vip_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATYRn6icZQYfdDkBwvRiPU_1pRV4AG8Bw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

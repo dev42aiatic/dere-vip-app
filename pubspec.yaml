@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   equatable: ^2.0.5
+  firebase_auth: ^4.15.1
   firebase_core: ^2.23.0
   flutter:
     sdk: flutter

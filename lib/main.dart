@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:dere_vip_app/core/router/app_router.dart';
 import 'package:dere_vip_app/core/theme/app_theme.dart';
 
-
-void main() async{
+void main() async {
   //Inicializar la conf para firebase.
   WidgetsFlutterBinding.ensureInitialized();
   await AutenticationBloc.initializeFirebase();
@@ -19,11 +18,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: appRouter, // se establece la config del router en core
+      title: 'DereVip App',
+      // se establece la config del router en core
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme().getTheme(), // se estable la config de los estilos de la aplicación en core
+      // se estable la config de los estilos de la aplicación en core
+      theme: AppTheme().getTheme(),
     );
   }
 }
-
-

@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:dere_vip_app/src/home/presentation/views/home_screem.dart';
+import 'package:dere_vip_app/src/home/presentation/views/home_screen.dart';
 
 // Definición de un enrutador de la aplicación llamado appRouter mediante Go_router.
 final appRouter = GoRouter(

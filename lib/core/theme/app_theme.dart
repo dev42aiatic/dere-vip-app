@@ -1,6 +1,7 @@
 // Importación selectiva de las clases Color y ThemeData desde la biblioteca flutter/material.
 import 'package:dere_vip_app/core/theme/color_schemes.dart';
-import 'package:flutter/material.dart' show FontWeight, ThemeData, TextTheme;
+import 'package:flutter/material.dart'
+    show FontWeight, FontStyle, ThemeData, TextTheme;
 import 'package:google_fonts/google_fonts.dart';
 
 // Definición de la clase AppTheme.
@@ -29,6 +30,24 @@ class AppTheme {
           ),
           bodySmall: GoogleFonts.montserratAlternates().copyWith(
             fontSize: 10,
+          ),
+          labelLarge: GoogleFonts.montserratAlternates().copyWith(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: colorScheme.secondary,
+          ),
+          labelMedium: GoogleFonts.montserratAlternates().copyWith(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: colorScheme.secondary,
+          ),
+          labelSmall: GoogleFonts.montserratAlternates().copyWith(
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: colorScheme.secondary,
           ),
           titleLarge: GoogleFonts.montserratAlternates().copyWith(
             fontSize: 20,

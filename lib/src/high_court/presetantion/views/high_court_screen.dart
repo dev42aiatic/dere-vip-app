@@ -25,7 +25,7 @@ class HighCourt extends StatelessWidget {
             Container(
               width: 110,
               height: 110,
-              margin: const EdgeInsets.only(top: 40, bottom: 15),
+              margin: const EdgeInsets.only(top: 20, bottom: 15),
               // Usa SvgPicture para mostrar un gráfico vectorial desde los assets.
               child: SvgPicture.asset(
                 'assets/images/logoDereVIP.svg',

@@ -28,7 +28,7 @@ const lightColorScheme = ColorScheme(
   onSecondaryContainer: Color(0xFF2B151C),
 
   // Tercer color, utilizado para acentuar otros elementos distintos.
-  tertiary: Color(0xFF9C7A4F),
+  tertiary: Color(0xFFDBBA91),
 
   // Color para texto e iconos sobre un fondo tertiary.
   onTertiary: Color(0xFFFFFFFF),

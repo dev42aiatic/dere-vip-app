@@ -59,6 +59,7 @@ class AppTheme {
           ),
           titleSmall: GoogleFonts.montserratAlternates().copyWith(
             fontSize: 12,
+            fontWeight: FontWeight.bold,
           ),
         ),
       );

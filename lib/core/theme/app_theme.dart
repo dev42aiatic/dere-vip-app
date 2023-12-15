@@ -9,11 +9,15 @@ class AppTheme {
   //To do
   //Convertir la configuración de estilos en json en esta clase ThemeData
 
+  static const colorScheme = lightColorScheme;
+
   ThemeData getTheme() => ThemeData(
         // Habilita el uso de Material3, una versión más reciente de Material Design.
         useMaterial3: true,
         // Establece el esquema de colores de la aplicación.
-        colorScheme: lightColorScheme,
+        colorScheme: colorScheme,
+        // Establece el color de fondo por defecto para el Scaffold de la aplicación.
+        scaffoldBackgroundColor: colorScheme.primaryContainer,
 
         ///* Texts
         textTheme: TextTheme(

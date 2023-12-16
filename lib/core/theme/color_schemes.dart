@@ -34,7 +34,7 @@ const lightColorScheme = ColorScheme(
   onTertiary: Color(0xFFFFFFFF),
 
   // Variante de tertiary para contenedores.
-  tertiaryContainer: Color(0xFFF2F2F2),
+  tertiaryContainer: Color(0xFFC3C3D2),
 
   // Color para texto e iconos sobre tertiaryContainer.
   onTertiaryContainer: Color(0xFF2B151C),

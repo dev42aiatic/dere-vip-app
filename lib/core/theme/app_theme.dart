@@ -60,7 +60,7 @@ class AppTheme {
             color: colorScheme.secondary,
           ),
           titleSmall: GoogleFonts.montserrat().copyWith(
-            fontSize: 11,
+            fontSize: 12,
             fontWeight: FontWeight.bold,
             color: colorScheme.secondary,
           ),

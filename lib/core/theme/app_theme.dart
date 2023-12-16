@@ -52,14 +52,17 @@ class AppTheme {
           titleLarge: GoogleFonts.montserratAlternates().copyWith(
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            color: colorScheme.secondary,
           ),
           titleMedium: GoogleFonts.montserratAlternates().copyWith(
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
+            color: colorScheme.secondary,
           ),
           titleSmall: GoogleFonts.montserratAlternates().copyWith(
-            fontSize: 12,
+            fontSize: 11,
             fontWeight: FontWeight.bold,
+            color: colorScheme.secondary,
           ),
         ),
       );

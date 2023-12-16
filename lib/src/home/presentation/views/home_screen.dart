@@ -1,5 +1,5 @@
 import 'package:dere_vip_app/src/high_court/presetantion/high_court.dart';
-import 'package:dere_vip_app/src/home/presentation/widgets/windgets.dart';
+import 'package:dere_vip_app/src/home/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 // Definición de la clase HomeScreen, que hereda de StatelessWidget.

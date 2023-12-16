@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 // Definición de un widget personalizado para la barra de aplicación de la página de inicio
 class CustomHomeAppbar extends StatelessWidget {
@@ -9,7 +12,6 @@ class CustomHomeAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     // Acceso a la configuración de colores y texto del tema actual
     final colors = Theme.of(context).colorScheme;
-    final textStyle = Theme.of(context).textTheme;
 
     // Contenedor que actúa como la barra de aplicación personalizada
     return Container(
@@ -26,58 +28,97 @@ class CustomHomeAppbar extends StatelessWidget {
             // Row para organizar los elementos horizontalmente
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: SvgPicture.asset(
-                    'assets/icons/perfil.svg',
-                    width: 33,
-                    height: 33,
-                  ),
-                  onPressed: () {},
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 0,
-                    vertical: 8,
-                  ),
-                  // Columna para el texto de saludo y nombre
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      // Texto de saludo
-                      Text(
-                        'Hola,',
-                        style: textStyle.titleSmall!.copyWith(
-                          color: colors.onPrimary, // Color del texto
-                        ),
-                      ),
-                      // Nombre del usuario
-                      Text(
-                        'Pepito',
-                        style: textStyle.titleSmall!.copyWith(
-                          color: colors.onPrimary, // Color del texto
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                // Espaciador para alinear los elementos a los extremos
-                const Spacer(),
-                // Botón con ícono de ajustes
-                IconButton(
-                  icon: SvgPicture.asset(
-                    'assets/icons/ajustes.svg',
-                    width: 30,
-                    height: 30,
-                  ),
-                  onPressed: () {},
-                ),
-              ],
+              // Carga dinámicamente los componentes dependiendo de la ruta
+              children: _getWidgetsByRoute(context),
             ),
           ),
         ),
       ),
     );
+  }
+
+  // Función para validar la ruta actual y retornar el Array de componentes
+  List<Widget> _getWidgetsByRoute(BuildContext context) {
+    String currentRouteName =
+        ModalRoute.of(context)?.settings.name ?? 'Unknown';
+
+    if (currentRouteName == 'profile') {
+      return _profileWidgets(context);
+    }
+
+    return _homeWidgets(context);
+  }
+
+  // Array de Widgets de la vista principal
+  List<Widget> _homeWidgets(BuildContext context) {
+    // Acceso a la configuración de colores y texto del tema actual
+    final colors = Theme.of(context).colorScheme;
+    final textStyle = Theme.of(context).textTheme;
+
+    return [
+      IconButton(
+        icon: SvgPicture.asset(
+          'assets/icons/perfil.svg',
+          width: 33,
+          height: 33,
+        ),
+        onPressed: () => context.push('/profile'),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 0,
+          vertical: 8,
+        ),
+        // Columna para el texto de saludo y nombre
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            // Texto de saludo
+            Text(
+              'Hola,',
+              style: textStyle.titleSmall!.copyWith(
+                color: colors.onPrimary, // Color del texto
+              ),
+            ),
+            // Nombre del usuario
+            Text(
+              'Pepito',
+              style: textStyle.titleSmall!.copyWith(
+                color: colors.onPrimary, // Color del texto
+              ),
+            ),
+          ],
+        ),
+      ),
+      // Espaciador para alinear los elementos a los extremos
+      const Spacer(),
+      // Botón con ícono de ajustes
+      IconButton(
+        icon: SvgPicture.asset(
+          'assets/icons/ajustes.svg',
+          width: 30,
+          height: 30,
+        ),
+        onPressed: () {},
+      ),
+    ];
+  }
+
+  // Array de Widgets del perfil
+  List<Widget> _profileWidgets(BuildContext context) {
+    // Acceso a la configuración de colores y texto del tema actual
+    final colors = Theme.of(context).colorScheme;
+
+    return [
+      IconButton(
+        icon: Icon(
+          Icons.home_outlined,
+          color: colors.secondary,
+          size: 40,
+        ),
+        onPressed: () => context.push('/'),
+      ),
+    ];
   }
 }

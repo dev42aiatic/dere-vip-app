@@ -34,8 +34,11 @@ class HighCourt extends StatelessWidget {
             ),
             // Condición que muestra CustomLabel si isPremium es verdadero.
             if (isPremium)
-              const CustomLabel(
-                text: 'Hazte Premium',
+              GestureDetector(
+                onTap: () => _showPremiumDialog(context),
+                child: const CustomLabel(
+                  text: 'Hazte Premium',
+                ),
               ),
             // Botones HighCourtButton con texto personalizado.
             const HighCourtButton(
@@ -56,6 +59,19 @@ class HighCourt extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void _showPremiumDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return const CustomDialog(
+          message:
+              '¡Accede de forma ilimitada a las consultas de Jurisprudenciales de las altas cortes!',
+          buttonLabel: 'Hacerme Premium',
+        );
+      },
     );
   }
 }

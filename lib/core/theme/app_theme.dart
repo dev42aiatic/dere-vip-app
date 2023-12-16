@@ -22,44 +22,44 @@ class AppTheme {
 
         ///* Texts
         textTheme: TextTheme(
-          bodyLarge: GoogleFonts.montserratAlternates().copyWith(
+          bodyLarge: GoogleFonts.montserrat().copyWith(
             fontSize: 14,
           ),
-          bodyMedium: GoogleFonts.montserratAlternates().copyWith(
+          bodyMedium: GoogleFonts.montserrat().copyWith(
             fontSize: 12,
           ),
-          bodySmall: GoogleFonts.montserratAlternates().copyWith(
+          bodySmall: GoogleFonts.montserrat().copyWith(
             fontSize: 10,
           ),
-          labelLarge: GoogleFonts.montserratAlternates().copyWith(
+          labelLarge: GoogleFonts.montserrat().copyWith(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             color: colorScheme.secondary,
           ),
-          labelMedium: GoogleFonts.montserratAlternates().copyWith(
+          labelMedium: GoogleFonts.montserrat().copyWith(
             fontSize: 12,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             color: colorScheme.secondary,
           ),
-          labelSmall: GoogleFonts.montserratAlternates().copyWith(
+          labelSmall: GoogleFonts.montserrat().copyWith(
             fontSize: 10,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             color: colorScheme.secondary,
           ),
-          titleLarge: GoogleFonts.montserratAlternates().copyWith(
+          titleLarge: GoogleFonts.montserrat().copyWith(
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: colorScheme.secondary,
           ),
-          titleMedium: GoogleFonts.montserratAlternates().copyWith(
+          titleMedium: GoogleFonts.montserrat().copyWith(
             fontSize: 15,
             fontWeight: FontWeight.bold,
             color: colorScheme.secondary,
           ),
-          titleSmall: GoogleFonts.montserratAlternates().copyWith(
+          titleSmall: GoogleFonts.montserrat().copyWith(
             fontSize: 11,
             fontWeight: FontWeight.bold,
             color: colorScheme.secondary,

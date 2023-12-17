@@ -1,5 +1,6 @@
-import 'package:go_router/go_router.dart';
 import 'package:dere_vip_app/src/home/presentation/views/home_screen.dart';
+import 'package:dere_vip_app/src/profile/profile.dart';
+import 'package:go_router/go_router.dart';
 
 // Definición de un enrutador de la aplicación llamado appRouter mediante Go_router.
 final appRouter = GoRouter(
@@ -8,11 +9,16 @@ final appRouter = GoRouter(
     // Definición de una ruta llamada '/'.
     GoRoute(
       path: '/', // Ruta de la ubicación.
-      name: HomeScreen.name, // Nombre asociado a la ruta, en este caso, el nombre de la clase HomeScreen.
-      builder: (context, state) => const HomeScreen(), // Constructor que devuelve una instancia de HomeScreen.
+      // Constructor que devuelve una instancia de HomeScreen.
+      // Nombre asociado a la ruta, en este caso, el nombre de la clase HomeScreen.
+      name: HomeScreen.name,
+      // Constructor que devuelve una instancia de HomeScreen.
+      builder: (context, state) => const HomeScreen(),
     ),
-    // Pueden añadirse más rutas según las necesidades de la aplicación.
-    //To do
-    //Incorporar las rutas de las diferentes screens que vayan a crear.
+    GoRoute(
+      path: '/profile',
+      name: ProfileScreen.name,
+      builder: (context, state) => const ProfileScreen(),
+    ),
   ],
 );

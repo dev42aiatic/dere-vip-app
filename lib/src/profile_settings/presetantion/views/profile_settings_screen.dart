@@ -1,5 +1,6 @@
 import 'package:dere_vip_app/src/high_court/presetantion/widgets/widgets.dart';
 import 'package:dere_vip_app/src/home/presentation/widgets/widgets.dart';
+import 'package:dere_vip_app/src/profile_settings/presetantion/widgets/custom_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -67,16 +68,14 @@ class ProfileSettingsScreen extends StatelessWidget {
       // Espaciador para alinear los elementos a los extremos.
       const Spacer(),
       // Icono de notificaciones.
-      SvgPicture.asset(
-        'assets/icons/notification.svg',
-        height: 23,
-      ),
+      CustomSwitch(),
     ];
   }
 
   // Array de Widgets de Datos personales
   List<Widget> _personalData(BuildContext context) {
     const String id = 'f252710-78Ad-2138bN-D2D6N-001AS';
+
     // Configuración de la sección de datos personales con icono y texto.
     return [
       const Column(
@@ -94,6 +93,7 @@ class ProfileSettingsScreen extends StatelessWidget {
           'assets/icons/datos.svg',
           height: 30,
         ),
+        // Al ejecutar TAP realiza copia del ID
         onTap: () async {
           await Clipboard.setData(
             const ClipboardData(text: id),

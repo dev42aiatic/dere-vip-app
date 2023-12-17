@@ -42,6 +42,8 @@ class CustomHomeAppbar extends StatelessWidget {
 
     if (currentRouteName == 'profile') {
       return _profileWidgets(context);
+    } else if (currentRouteName == 'profile_settings') {
+      return _profileSettingsWidgets(context);
     }
 
     return _homeWidgets(context);
@@ -98,7 +100,7 @@ class CustomHomeAppbar extends StatelessWidget {
           width: 30,
           height: 30,
         ),
-        onPressed: () {},
+        onPressed: () => context.push('/profile_settings'),
       ),
     ];
   }
@@ -117,6 +119,36 @@ class CustomHomeAppbar extends StatelessWidget {
         ),
         onPressed: () => context.push('/'),
       ),
+    ];
+  }
+
+  // Array de Widgets de la configuración de perfil
+  List<Widget> _profileSettingsWidgets(BuildContext context) {
+    // Acceso a la configuración de colores y texto del tema actual
+    final colors = Theme.of(context).colorScheme;
+    final textStyle = Theme.of(context).textTheme;
+
+    return [
+      IconButton(
+        icon: Icon(
+          Icons.arrow_back_ios,
+          color: colors.secondary,
+          size: 25,
+        ),
+        onPressed: () => context.pop(),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 0,
+          vertical: 13,
+        ),
+        child: Text(
+          'Ajustes',
+          style: textStyle.titleMedium!.copyWith(
+            color: colors.onPrimary, // Color del texto
+          ),
+        ),
+      )
     ];
   }
 }

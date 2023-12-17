@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../widgets/widgets.dart';
 
@@ -22,16 +21,7 @@ class HighCourt extends StatelessWidget {
         child: Column(
           children: [
             // Contenedor para el logo, con un tamaño y márgenes definidos.
-            Container(
-              width: 110,
-              height: 110,
-              margin: const EdgeInsets.only(top: 20, bottom: 15),
-              // Usa SvgPicture para mostrar un gráfico vectorial desde los assets.
-              child: SvgPicture.asset(
-                'assets/images/logoDereVIP.svg',
-                fit: BoxFit.cover,
-              ),
-            ),
+            const AppLogoContainer(),
             // Condición que muestra CustomLabel si isPremium es verdadero.
             if (isPremium)
               GestureDetector(

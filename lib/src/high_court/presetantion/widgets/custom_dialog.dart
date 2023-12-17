@@ -50,7 +50,7 @@ class CustomDialog extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 // Widget para el botón personalizado en el diálogo
-                CustomDialogButton(
+                CustomButton(
                   borderRadius: borderRadius,
                   buttonLabel: buttonLabel,
                 ),

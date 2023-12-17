@@ -1,14 +1,14 @@
 // Widget para el botón personalizado dentro del diálogo
 import 'package:flutter/material.dart';
 
-class CustomDialogButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final double borderRadius; // Radio del borde para el botón
   final String buttonLabel; // Etiqueta del botón
   final double horizontal;
   final double vertical;
 
   // Constructor con parámetros requeridos
-  const CustomDialogButton({
+  const CustomButton({
     super.key,
     this.borderRadius = 10,
     required this.buttonLabel,

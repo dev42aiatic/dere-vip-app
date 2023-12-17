@@ -57,9 +57,7 @@ class ProfileScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 // Contenedor para agrupar widgets y aplicar estilos.
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: colors.tertiaryContainer,
-                  ),
+                  color: colors.tertiaryContainer,
                   width: double.infinity,
                   // Columna para organizar los elementos de la sección Premium.
                   child: Column(

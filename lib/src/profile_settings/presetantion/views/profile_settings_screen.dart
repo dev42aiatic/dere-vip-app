@@ -1,6 +1,7 @@
 import 'package:dere_vip_app/src/high_court/presetantion/widgets/widgets.dart';
 import 'package:dere_vip_app/src/home/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProfileSettingsScreen extends StatelessWidget {
@@ -75,21 +76,30 @@ class ProfileSettingsScreen extends StatelessWidget {
 
   // Array de Widgets de Datos personales
   List<Widget> _personalData(BuildContext context) {
+    const String id = 'f252710-78Ad-2138bN-D2D6N-001AS';
     // Configuración de la sección de datos personales con icono y texto.
     return [
       const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _SettingText(text: 'Mis datos de usuario DereVip'),
-          _SettingText(text: 'f252710-78Ad-2138bN-D2D6N-001AS'),
+          _SettingText(text: id),
         ],
       ),
       // Espaciador para alinear los elementos a los extremos.
       const Spacer(),
       // Icono de datos personales.
-      SvgPicture.asset(
-        'assets/icons/datos.svg',
-        height: 30,
+      GestureDetector(
+        child: SvgPicture.asset(
+          'assets/icons/datos.svg',
+          height: 30,
+        ),
+        onTap: () async {
+          await Clipboard.setData(
+            const ClipboardData(text: id),
+          );
+          // copied successfully
+        },
       ),
     ];
   }

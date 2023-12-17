@@ -52,9 +52,7 @@ class CustomDialog extends StatelessWidget {
                 // Widget para el botón personalizado en el diálogo
                 CustomDialogButton(
                   borderRadius: borderRadius,
-                  colors: colors,
                   buttonLabel: buttonLabel,
-                  textStyle: textStyle,
                 ),
               ],
             ),

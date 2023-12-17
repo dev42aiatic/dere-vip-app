@@ -3,21 +3,26 @@ import 'package:flutter/material.dart';
 
 class CustomDialogButton extends StatelessWidget {
   final double borderRadius; // Radio del borde para el botón
-  final ColorScheme colors; // Esquema de color del tema
   final String buttonLabel; // Etiqueta del botón
-  final TextTheme textStyle; // Estilo del texto del botón
+  final double horizontal;
+  final double vertical;
 
   // Constructor con parámetros requeridos
   const CustomDialogButton({
     super.key,
-    required this.borderRadius,
-    required this.colors,
+    this.borderRadius = 10,
     required this.buttonLabel,
-    required this.textStyle,
+    this.horizontal = 25,
+    this.vertical = 5,
   });
 
   @override
   Widget build(BuildContext context) {
+    // Obtiene el esquema de color del tema
+    final colors = Theme.of(context).colorScheme;
+    // Obtiene la configuración de textos del tema
+    final textStyle = Theme.of(context).textTheme;
+
     // ClipRRect para redondear los bordes del botón
     return ClipRRect(
       borderRadius: BorderRadius.circular(borderRadius),
@@ -29,15 +34,16 @@ class CustomDialogButton extends StatelessWidget {
           onTap: () {}, // Acción al tocar el botón (a definir)
           // Padding para el contenido del botón
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 25,
-              vertical: 5,
+            padding: EdgeInsets.symmetric(
+              horizontal: horizontal,
+              vertical: vertical,
             ),
             // Texto del botón
             child: Text(
               buttonLabel,
               style: textStyle.bodyMedium!.copyWith(
-                color: colors.onPrimary, // Color del texto
+                color: colors.onPrimary,
+                fontWeight: FontWeight.bold, // Color del texto
               ),
             ),
           ),

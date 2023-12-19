@@ -1,3 +1,6 @@
+import 'package:dere_vip_app/src/home/presentation/views/home_screen.dart';
+import 'package:dere_vip_app/src/profile/profile.dart';
+import 'package:dere_vip_app/src/profile_settings/profile_setting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -40,9 +43,9 @@ class CustomHomeAppbar extends StatelessWidget {
     String currentRouteName =
         ModalRoute.of(context)?.settings.name ?? 'Unknown';
 
-    if (currentRouteName == 'profile') {
+    if (currentRouteName == ProfileScreen.name) {
       return _profileWidgets(context);
-    } else if (currentRouteName == 'profile_settings') {
+    } else if (currentRouteName == ProfileSettingsScreen.name) {
       return _profileSettingsWidgets(context);
     }
 
@@ -62,7 +65,7 @@ class CustomHomeAppbar extends StatelessWidget {
           width: 33,
           height: 33,
         ),
-        onPressed: () => context.push('/profile'),
+        onPressed: () => context.pushNamed(ProfileScreen.name),
       ),
       Padding(
         padding: const EdgeInsets.symmetric(
@@ -100,7 +103,7 @@ class CustomHomeAppbar extends StatelessWidget {
           width: 30,
           height: 30,
         ),
-        onPressed: () => context.push('/profile_settings'),
+        onPressed: () => context.pushNamed(ProfileSettingsScreen.name),
       ),
     ];
   }
@@ -117,7 +120,7 @@ class CustomHomeAppbar extends StatelessWidget {
           color: colors.secondary,
           size: 40,
         ),
-        onPressed: () => context.push('/'),
+        onPressed: () => context.pushNamed(HomeScreen.name)
       ),
     ];
   }

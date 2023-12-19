@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/widgets.dart';
+import 'package:dere_vip_app/src/high_court/bloc/high_court_bloc.dart';
 
 // Define la clase HighCourt como un widget sin estado.
-class HighCourt extends StatelessWidget {
+class HighCourtScreen extends StatelessWidget {
   // Nombre estático para referencia en rutas o navegación.
-  static const name = 'high_court';
+  static const name = 'high_court_screen';
 
   // Constructor de HighCourt con una clave opcional.
-  const HighCourt({super.key});
+  const HighCourtScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Define una constante para determinar si el usuario es premium.
-    const isPremium = true;
 
-    // SingleChildScrollView permite un desplazamiento si el contenido es demasiado largo.
-    return SingleChildScrollView(
+    return BlocProvider(
+              create: (_) => HighCourtBloc(), 
+              child: const _HighCourtView(),
+              );
+
+  }
+  
+}
+
+class _HighCourtView extends StatelessWidget {
+
+  static const isPremium = true;
+
+  const _HighCourtView();
+
+  
+  @override
+  Widget build(BuildContext context) {
+
+     return SingleChildScrollView(
       child: Center(
         child: Column(
           children: [
@@ -50,6 +68,7 @@ class HighCourt extends StatelessWidget {
         ),
       ),
     );
+
   }
 
   void _showPremiumDialog(BuildContext context) {
@@ -64,4 +83,5 @@ class HighCourt extends StatelessWidget {
       },
     );
   }
+
 }

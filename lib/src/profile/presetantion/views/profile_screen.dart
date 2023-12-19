@@ -1,22 +1,39 @@
 import 'package:dere_vip_app/src/home/presentation/widgets/widgets.dart';
+import 'package:dere_vip_app/src/profile/presetantion/bloc/profile_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileScreen extends StatelessWidget {
   // Define un nombre estático para ser utilizado en la navegación y en la definición de rutas.
-  static const name = 'profile';
+  static const name = 'profile_screen';
 
   // Constructor básico con una clave opcional.
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Accede al esquema de colores actual basado en el tema de la aplicación.
-    final colors = Theme.of(context).colorScheme;
-    // Accede a la configuración de estilo de texto basado en el tema de la aplicación.
-    final textStyle = Theme.of(context).textTheme;
 
     // Crea la estructura principal de la pantalla utilizando Scaffold.
-    return Scaffold(
+    return BlocProvider(
+      create: (_) => ProfileBloc(),
+      child: const _ProfileView(),
+      );
+  }
+}
+
+class _ProfileView extends StatelessWidget {
+  
+  const _ProfileView();
+
+    
+  @override
+  Widget build(BuildContext context) {
+      // Accede al esquema de colores actual basado en el tema de la aplicación.
+      final colors = Theme.of(context).colorScheme;
+      // Accede a la configuración de estilo de texto basado en el tema de la aplicación.
+      final textStyle = Theme.of(context).textTheme;
+      // Crea la estructura principal de la pantalla utilizando Scaffold.
+      return Scaffold(
       // Columna para organizar los widgets verticalmente.
       body: Column(
         children: [

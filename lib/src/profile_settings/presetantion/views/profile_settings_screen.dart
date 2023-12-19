@@ -1,13 +1,15 @@
 import 'package:dere_vip_app/src/high_court/presetantion/widgets/widgets.dart';
 import 'package:dere_vip_app/src/home/presentation/widgets/widgets.dart';
+import 'package:dere_vip_app/src/profile_settings/presetantion/bloc/profile_settings_bloc.dart';
 import 'package:dere_vip_app/src/profile_settings/presetantion/widgets/custom_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProfileSettingsScreen extends StatelessWidget {
   // Define un nombre estático para ser utilizado en la navegación y en la definición de rutas.
-  static const name = 'profile_settings';
+  static const name = 'profile_settings_screen';
 
   // Constructor básico con una clave opcional.
   const ProfileSettingsScreen({super.key});
@@ -15,6 +17,20 @@ class ProfileSettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Crea la estructura principal de la pantalla utilizando Scaffold.
+    return BlocProvider(
+      create: (_) => ProfileSettingsBloc(),
+      child: const _ProfileSettingsView(),
+      );
+  }
+
+  
+}
+
+class _ProfileSettingsView extends StatelessWidget {
+  const _ProfileSettingsView ();
+  
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       // Columna para organizar los widgets verticalmente.
       body: Column(
@@ -120,6 +136,7 @@ class ProfileSettingsScreen extends StatelessWidget {
       ),
     ];
   }
+
 }
 
 class _ConfigurationPanel extends StatelessWidget {

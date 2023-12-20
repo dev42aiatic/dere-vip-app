@@ -1,5 +1,3 @@
-import 'package:dere_vip_app/core/router/app_router.dart';
-import 'package:dere_vip_app/core/theme/app_theme.dart';
 import 'package:dere_vip_app/src/high_court/presetantion/high_court.dart';
 import 'package:dere_vip_app/src/home/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -17,17 +15,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Devuelve un Scaffold, que es un marco visual básico de la aplicación.
     return const Scaffold(
-                      // Configuración del cuerpo de la pantalla, que contiene un widget HighCourt.
-                          body: Column(
-                                      children: [
-                                                  CustomHomeAppbar(),
-                                                  Expanded(
-                                                            child: HighCourtScreen(),
-                                                          ),
-                                                ],
-                                      ),
-                          bottomNavigationBar: CustomBottomNavigationBar(),
-                        );
+      // Configuración del cuerpo de la pantalla, que contiene un widget HighCourt.
+      body: Column(
+        children: [
+          CustomHomeAppbar(),
+          Expanded(
+            child: HighCourtScreen(),
+          ),
+        ],
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
+    );
   }
 }
-
